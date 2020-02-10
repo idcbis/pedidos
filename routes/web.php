@@ -14,3 +14,5 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/new-order', 'UserController@newOrder')->name('newOrder');
