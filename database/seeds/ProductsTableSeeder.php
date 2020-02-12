@@ -13,77 +13,77 @@ class ProductsTableSeeder extends Seeder
     {
         \DB::table('products')->insert([
             'name' => 'Glóbulos rojos pobres en leucocitos',
-            'short-name' => 'grpl'
+            'shortName' => 'grpl'
         ]);
 
         \DB::table('products')->insert([
             'name' => 'Glóbulos rojos frescos',
-            'short-name' => 'grf'
+            'shortName' => 'grf'
         ]);
 
         \DB::table('products')->insert([
             'name' => 'Glóbulos rojos filtrados',
-            'short-name' => 'grfl'
+            'shortName' => 'grfl'
         ]);
 
         \DB::table('products')->insert([
             'name' => 'Glóbulos rojos filtrados irradiados',
-            'short-name' => 'grfli'
+            'shortName' => 'grfli'
         ]);
 
         \DB::table('products')->insert([
             'name' => 'Glóbulos rojos irradiados',
-            'short-name' => 'gri'
+            'shortName' => 'gri'
         ]);
 
         \DB::table('products')->insert([
             'name' => 'Unidades pediátricas',
-            'short-name' => 'up'
+            'shortName' => 'up'
         ]);
 
         \DB::table('products')->insert([
             'name' => 'Unidades pediátricas filtradas irradiadas',
-            'short-name' => 'upfi'
+            'shortName' => 'upfi'
         ]);
 
         \DB::table('products')->insert([
             'name' => 'Unidades pediátricas filtradas',
-            'short-name' => 'upf'
+            'shortName' => 'upf'
         ]);
 
         \DB::table('products')->insert([
             'name' => 'Unidades pediátricas irradiadas',
-            'short-name' => 'upi'
+            'shortName' => 'upi'
         ]);
 
         \DB::table('products')->insert([
             'name' => 'Plaquetas pobres en leucocitos',
-            'short-name' => 'ppl'
+            'shortName' => 'ppl'
         ]);
 
         \DB::table('products')->insert([
             'name' => 'Plaquetas pobres en leucocitos irradiadas',
-            'short-name' => 'ppli'
+            'shortName' => 'ppli'
         ]);
 
         \DB::table('products')->insert([
             'name' => 'Plaquetas por aferesis',
-            'short-name' => 'ppa'
+            'shortName' => 'ppa'
         ]);
 
         \DB::table('products')->insert([
             'name' => 'Plaquetas por aferesis irradiadas',
-            'short-name' => 'ppai'
+            'shortName' => 'ppai'
         ]);
 
         \DB::table('products')->insert([
             'name' => 'Plasma fresco congelado',
-            'short-name' => 'pfc'
+            'shortName' => 'pfc'
         ]);
 
         \DB::table('products')->insert([
             'name' => 'Crioprecipitado',
-            'short-name' => 'criop'
+            'shortName' => 'criop'
         ]);
     }
 }

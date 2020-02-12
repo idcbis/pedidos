@@ -9,8 +9,7 @@ class UserController extends Controller
 {
     public function newOrder() {
         $products = Product::get();
-        dd($products);
-        return view('users.newOrder');
+        return view('users.newOrder', compact('products'));
     }
 
     public function orderHistory() {
