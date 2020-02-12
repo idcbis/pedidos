@@ -14,3 +14,27 @@
 .bg-color-blue-gradient{
     background-image: linear-gradient(180deg,#026799 10%,#025283 100%);
 }
+
+/* formulario de pedidos */
+/* .formulario-pedidos__container{
+    display: grid;
+    grid-template-columns: 30% 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 5px;
+} */
+
+.formulario-pedidos__table tr td:first-child{
+    width: 30%;
+}
+
+.table-order-history tr td:nth-of-type(2){
+    text-align: center;
+}
+
+.table-order-history tr td:nth-of-type(3){
+    text-align: right;
+}
+
+.table-hover tbody tr:hover{
+    color:white;
+    background-color:rgba(2,82,131,0.7);
+}

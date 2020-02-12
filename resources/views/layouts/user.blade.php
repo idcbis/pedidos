@@ -48,14 +48,14 @@
       </div> -->
       
       <li class="nav-item">
-        <a class="nav-link" href="">
+        <a class="nav-link" href="{!! route('newOrder') !!}">
           <i class="fas fa-plus-circle"></i>
           <span>Nuevo</span>
         </a>
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" href="">
+        <a class="nav-link" href="{!! route('orderHistory') !!}">
           <i class="fas fa-history"></i>
           <span>Historial</span>
         </a>

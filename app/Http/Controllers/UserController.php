@@ -9,4 +9,8 @@ class UserController extends Controller
     public function newOrder() {
         return view('users.newOrder');
     }
+
+    public function orderHistory() {
+        return view('users.orderHistory');
+    }
 }

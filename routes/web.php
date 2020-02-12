@@ -16,3 +16,4 @@ Route::get('/', function () {
 });
 
 Route::get('/new-order', 'UserController@newOrder')->name('newOrder');
+Route::get('/order-history', 'UserController@orderHistory')->name('orderHistory');
