@@ -17,3 +17,6 @@ Route::get('/', function () {
 
 Route::get('/new-order', 'UserController@newOrder')->name('newOrder');
 Route::get('/order-history', 'UserController@orderHistory')->name('orderHistory');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
