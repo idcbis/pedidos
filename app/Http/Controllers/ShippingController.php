@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Product;
 
 class ShippingController extends Controller
 {
@@ -13,7 +14,7 @@ class ShippingController extends Controller
     }
 
     public function dashboard () {
-        return 'ok';
+        return view('shipping.home');
     }
 }
 
