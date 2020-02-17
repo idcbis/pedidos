@@ -48,7 +48,7 @@
       </div> -->
       
       <li class="nav-item">
-        <a class="nav-link" href="{!! route('newOrder') !!}">
+        <a class="nav-link" href="{!! route('home') !!}">
           <i class="fas fa-plus-circle"></i>
           <span>Nuevo</span>
         </a>
@@ -101,10 +101,13 @@
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                   <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                   Cerrar sesión
                 </a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    @csrf
+                </form>
               </div>
             </li>
             

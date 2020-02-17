@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Product;
 
 class HomeController extends Controller
 {
@@ -15,7 +16,7 @@ class HomeController extends Controller
     {
         $this->middleware('auth');
     }
-
+    
     /**
      * Show the application dashboard.
      *
@@ -23,6 +24,16 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        if (\Auth::user()->isAdmin()) {
+            return \Redirect::to('/dashboard');
+        }
+
+        $products = Product::get();
+        return view('users.newOrder', compact('products'));
     }
+
+    public function orderHistory() {
+        return view('users.orderHistory');
+    }
+
 }
