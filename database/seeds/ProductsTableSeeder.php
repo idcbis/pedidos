@@ -17,13 +17,18 @@ class ProductsTableSeeder extends Seeder
         ]);
 
         \DB::table('products')->insert([
-            'name' => 'Glóbulos rojos frescos',
-            'shortName' => 'grf'
+            'name' => 'Glóbulos rojos pobres en leucocitos frescos',
+            'shortName' => 'grplf'
         ]);
 
         \DB::table('products')->insert([
             'name' => 'Glóbulos rojos filtrados',
             'shortName' => 'grfl'
+        ]);
+
+        \DB::table('products')->insert([
+            'name' => 'Glóbulos rojos filtrados frescos',
+            'shortName' => 'grflf'
         ]);
 
         \DB::table('products')->insert([
@@ -37,11 +42,6 @@ class ProductsTableSeeder extends Seeder
         ]);
 
         \DB::table('products')->insert([
-            'name' => 'Unidades pediátricas',
-            'shortName' => 'up'
-        ]);
-
-        \DB::table('products')->insert([
             'name' => 'Unidades pediátricas filtradas irradiadas',
             'shortName' => 'upfi'
         ]);
@@ -49,11 +49,6 @@ class ProductsTableSeeder extends Seeder
         \DB::table('products')->insert([
             'name' => 'Unidades pediátricas filtradas',
             'shortName' => 'upf'
-        ]);
-
-        \DB::table('products')->insert([
-            'name' => 'Unidades pediátricas irradiadas',
-            'shortName' => 'upi'
         ]);
 
         \DB::table('products')->insert([
@@ -67,13 +62,33 @@ class ProductsTableSeeder extends Seeder
         ]);
 
         \DB::table('products')->insert([
-            'name' => 'Plaquetas por aferesis',
+            'name' => 'Plaquetas por aféresis',
             'shortName' => 'ppa'
         ]);
 
         \DB::table('products')->insert([
-            'name' => 'Plaquetas por aferesis irradiadas',
+            'name' => 'Plaquetas por aféresis filtradas',
+            'shortName' => 'ppaf'
+        ]);
+
+        \DB::table('products')->insert([
+            'name' => 'Plaquetas por aféresis irradiadas',
             'shortName' => 'ppai'
+        ]);
+
+        \DB::table('products')->insert([
+            'name' => 'Plaquetas por aféresis filtradas irradiadas',
+            'shortName' => 'ppafi'
+        ]);
+
+        \DB::table('products')->insert([
+            'name' => 'Alícuota de plaquetas por aféresis',
+            'shortName' => 'appa'
+        ]);
+
+        \DB::table('products')->insert([
+            'name' => 'Alícuota de plaquetas por aféresis irradiada',
+            'shortName' => 'appai'
         ]);
 
         \DB::table('products')->insert([
