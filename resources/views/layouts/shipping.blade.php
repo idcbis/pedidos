@@ -55,7 +55,7 @@
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" href="{!! route('orderHistory') !!}">
+        <a class="nav-link" href="{!! route('userOrderHistory') !!}">
           <i class="fas fa-history"></i>
           <span>Historial</span>
         </a>

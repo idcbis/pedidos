@@ -47,4 +47,11 @@ class User extends Authenticatable
         }
         return false;
     }
+
+    public function userBelongsToPublicCompany () {
+        if(\Auth::user()->company->type === 1) {
+            return true;
+        }
+        return false;
+    }
 }

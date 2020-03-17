@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Product;
 
 class HomeController extends Controller
 {
@@ -24,16 +23,15 @@ class HomeController extends Controller
      */
     public function index()
     {
+        /* Si el usuario logueado es administrador */
         if (\Auth::user()->isAdmin()) {
-            return \Redirect::to('/dashboard');
+            return redirect()->route('shippingDashboard');
+        } else {
+            /* Si el usuario logueado pertenece a una entidad pública */
+            if (\Auth::user()->userBelongsToPublicCompany()) {
+                return 'entidad publica';
+            }
+            return redirect()->route('userHome');
         }
-
-        $products = Product::get();
-        return view('users.newOrder', compact('products'));
     }
-
-    public function orderHistory() {
-        return view('users.orderHistory');
-    }
-
 }

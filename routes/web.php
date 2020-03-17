@@ -6,9 +6,16 @@ Route::get('/', function () { return view('welcome'); });
 /* Login routes */
 Auth::routes();
 
-/* User Routes */
+/* Global controller */
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/order-history', 'HomeController@orderHistory')->name('orderHistory');
+
+/* User Routes */
+Route::prefix('user')->group(function () {
+  Route::get('home', 'UserController@home')->name('userHome');
+  Route::get('order-history', 'UserController@orderHistory')->name('userOrderHistory');
+});
 
 /* Shipping Routes */
-Route::get('/dashboard', 'ShippingController@dashboard')->name('dashboard');
+Route::prefix('shipping')->group(function () {
+  Route::get('/dashboard', 'ShippingController@dashboard')->name('shippingDashboard');
+});
