@@ -50,7 +50,7 @@
       <li class="nav-item">
         <a class="nav-link" href="{!! route('home') !!}">
           <i class="fas fa-plus-circle"></i>
-          <span>Nuevo</span>
+          <span>Nuevo pedido</span>
         </a>
       </li>
 

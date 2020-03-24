@@ -5,6 +5,8 @@ namespace App;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use App\Stock;
+use Carbon\Carbon;
 
 class User extends Authenticatable
 {
@@ -54,4 +56,10 @@ class User extends Authenticatable
         }
         return false;
     }
+
+    public function userHasStock () {
+        $stock = Stock::Where('company_id', \Auth::user()->company_id)->WhereDate('created_at', Carbon::today())->get();
+        return count($stock);
+    }
+
 }

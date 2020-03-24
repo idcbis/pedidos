@@ -29,7 +29,9 @@ class HomeController extends Controller
         } else {
             /* Si el usuario logueado pertenece a una entidad pública */
             if (\Auth::user()->userBelongsToPublicCompany()) {
-                return 'entidad publica';
+                if(\Auth::user()->userHasStock() == 0) {
+                    return redirect()->route('userStock');
+                }
             }
             return redirect()->route('userHome');
         }
