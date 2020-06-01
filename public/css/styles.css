@@ -26,6 +26,11 @@
     width: 30%;
 }
 
+.formulario-pedidos__table .selected{
+    background-color: #026799;
+    color: white;
+}
+
 .table-order-history tr td:nth-of-type(2){
     text-align: center;
 }

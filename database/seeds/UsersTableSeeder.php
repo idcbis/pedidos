@@ -34,5 +34,13 @@ class UsersTableSeeder extends Seeder
             'role' => 1,
             'company_id' => 0,
         ]);
+
+        \DB::table('users')->insert([
+            'name' => 'Public 2',
+            'email' => 'public2@test.com',
+            'password' => bcrypt('holahola'),
+            'role' => 2,
+            'company_id' => 2,
+        ]);
     }
 }
