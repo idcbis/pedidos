@@ -11,8 +11,9 @@
   <div class="col-12">
     <div class="card border-left-primary shadow mb-4">
       <div class="card-body">
-        <form class="formulario-pedidos" action="" autocomplete="off">
-          
+        <form class="formulario-pedidos" action="{{ route('userNewOrder') }}" autocomplete="off">
+          @csrf
+
           <table class="table table-striped table-hover formulario-pedidos__table">
             <tr>
               <th>COMPONENTE</th>
@@ -24,19 +25,19 @@
             @foreach($products as $product)
             <tr>
               <td><p>{!! $product->name !!}</p></td>
-              <td><input class="form-control" type="text" name="{!! $product['shortName'] !!}opos" placeholder="O+"></td>
-              <td><input class="form-control" type="text" name="{!! $product['shortName'] !!}oneg" placeholder="O-"></td>
-              <td><input class="form-control" type="text" name="{!! $product['shortName'] !!}apos" placeholder="A+"></td>
-              <td><input class="form-control" type="text" name="{!! $product['shortName'] !!}aneg" placeholder="A-"></td>
-              <td><input class="form-control" type="text" name="{!! $product['shortName'] !!}bpos" placeholder="B+"></td>
-              <td><input class="form-control" type="text" name="{!! $product['shortName'] !!}bneg" placeholder="B-"></td>
-              <td><input class="form-control" type="text" name="{!! $product['shortName'] !!}abpos" placeholder="AB+"></td>
-              <td><input class="form-control" type="text" name="{!! $product['shortName'] !!}abneg" placeholder="AB-"></td>
+              <td><input class="form-control" type="text" name="{!! $product['shortName'] !!}_O+" placeholder="O+"></td>
+              <td><input class="form-control" type="text" name="{!! $product['shortName'] !!}_O-" placeholder="O-"></td>
+              <td><input class="form-control" type="text" name="{!! $product['shortName'] !!}_A+" placeholder="A+"></td>
+              <td><input class="form-control" type="text" name="{!! $product['shortName'] !!}_A-" placeholder="A-"></td>
+              <td><input class="form-control" type="text" name="{!! $product['shortName'] !!}_B+" placeholder="B+"></td>
+              <td><input class="form-control" type="text" name="{!! $product['shortName'] !!}_B-" placeholder="B-"></td>
+              <td><input class="form-control" type="text" name="{!! $product['shortName'] !!}_AB+" placeholder="AB+"></td>
+              <td><input class="form-control" type="text" name="{!! $product['shortName'] !!}_AB-" placeholder="AB-"></td>
             </tr>
             @endforeach
           </table>
           
-          <button class="btn btn-lg btn-primary float-right" type="button" onclick="handleClick()"><i class="fas fa-check"></i> Solicitar</button>
+          <button class="btn btn-lg btn-primary float-right" type="submit"><i class="fas fa-check"></i> Solicitar</button>
           
         </form>
       </div>
@@ -48,6 +49,12 @@
 @section('js')
 <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script> -->
 <script>
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    console.log('entro');
+  }
+
   let items = document.getElementsByClassName('form-control');
 
   for (let i = 0; i < items.length; i++) {

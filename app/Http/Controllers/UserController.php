@@ -14,16 +14,30 @@ class UserController extends Controller
         $this->middleware('auth');
     }
 
+    public function isNumeric($data) {
+        $filtered = \Arr::where($data, function ($value, $key) {
+            return is_numeric($value);
+        });
+        return $filtered;
+    }
+
     public function home() {
         $products = Product::get();
         return view('users.newOrder', compact('products'));
+    }
+
+    public function newOrder(Request $request) {
+        $data = $request->all();
+
+        $response = $this->isNumeric($data);
+        dd($response);
     }
 
     public function stock() {
         return view('users.stock');
     }
 
-    public function postStock(Request $request){
+    public function postStock(Request $request) {
         $stock = new Stock();
         $stock->fill($request->all());
         $stock->save();
