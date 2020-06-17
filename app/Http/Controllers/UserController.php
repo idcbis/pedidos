@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Product;
 use App\Stock;
-use Carbon\Carbon;
+use App\Order;
 
 class UserController extends Controller
 {
@@ -14,7 +14,7 @@ class UserController extends Controller
         $this->middleware('auth');
     }
 
-    public function isNumeric($data) {
+    public function filterOnlyNumeric($data) {
         $filtered = \Arr::where($data, function ($value, $key) {
             return is_numeric($value);
         });
@@ -28,9 +28,22 @@ class UserController extends Controller
 
     public function newOrder(Request $request) {
         $data = $request->all();
+        $response = $this->filterOnlyNumeric($data);
+        
+        if(count($response) > 0) {
+            $order = new Order();
+            $order->user_id = \Auth::user()->id;
+            $order->order = json_encode($response);
 
-        $response = $this->isNumeric($data);
-        dd($response);
+            if($order->save()) {
+                return \Redirect::route('userOrderHistory')->with('success', 'Orden enviada');
+            } else {
+                return \Redirect::back()->with('error', 'Fallo el envío de la orden, inténtalo de nuevo');
+            }
+        } else {
+            return \Redirect::back()->with('error', 'Fallo el envío de la orden, inténtalo de nuevo');
+        }
+
     }
 
     public function stock() {
