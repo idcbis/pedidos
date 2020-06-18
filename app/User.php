@@ -62,4 +62,8 @@ class User extends Authenticatable
         return count($stock);
     }
 
+    public function orders() {
+        return $this->hasMany('App\Order');
+    }
+
 }

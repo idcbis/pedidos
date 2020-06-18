@@ -64,7 +64,9 @@ class UserController extends Controller
     }
 
     public function orderHistory() {
-        return view('users.orderHistory');
+        $resultOrders = \Auth::user()->orders;
+        $orders = $resultOrders->sortByDesc('id');
 
+        return view('users.orderHistory', compact('orders'));
     }
 }

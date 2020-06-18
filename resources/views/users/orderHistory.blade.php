@@ -24,10 +24,11 @@
               </tr>
             </thead>
             <tbody>
+              @foreach($orders as $order)
               <tr>
-                <td>09/02/2020</td>
+                <td>{!! $order->created_at !!}</td>
                 <td>
-                  <span class="badge badge-danger">En proceso</span>
+                  <span class="badge badge-danger">{!! $order->state !!}</span>
                 </td>
                 <td>
                   <a class="btn btn-success" href="">
@@ -35,105 +36,7 @@
                   </a>
                 </td>
               </tr>
-              <tr>
-                <td>07/02/2020</td>
-                <td>
-                  <span class="badge badge-info">Con pendientes</span>
-                </td>
-                <td>
-                  <a class="btn btn-success" href="">
-                    <i class="fas fa-eye"></i>
-                  </a>
-                </td>
-              </tr>
-              <tr>
-                <td>07/02/2020</td>
-                <td>
-                  <span class="badge badge-secondary">Cerrado</span>
-                </td>
-                <td>
-                  <a class="btn btn-success" href="">
-                    <i class="fas fa-eye"></i>
-                  </a>
-                </td>
-              </tr>
-              <tr>
-                <td>05/02/2020</td>
-                <td>
-                  <span class="badge badge-info">Con pendientes</span>
-                </td>
-                <td>
-                  <a class="btn btn-success" href="">
-                    <i class="fas fa-eye"></i>
-                  </a>
-                </td>
-              </tr>
-              <tr>
-                <td>02/02/2020</td>
-                <td>
-                  <span class="badge badge-secondary">Cerrado</span>
-                </td>
-                <td>
-                  <a class="btn btn-success" href="">
-                    <i class="fas fa-eye"></i>
-                  </a>
-                </td>
-              </tr>
-              <tr>
-                <td>01/02/2020</td>
-                <td>
-                  <span class="badge badge-secondary">Cerrado</span>
-                </td>
-                <td>
-                  <a class="btn btn-success" href="">
-                    <i class="fas fa-eye"></i>
-                  </a>
-                </td>
-              </tr>
-              <tr>
-                <td>01/02/2020</td>
-                <td>
-                  <span class="badge badge-secondary">Cerrado</span>
-                </td>
-                <td>
-                  <a class="btn btn-success" href="">
-                    <i class="fas fa-eye"></i>
-                  </a>
-                </td>
-              </tr>
-              <tr>
-                <td>01/02/2020</td>
-                <td>
-                  <span class="badge badge-secondary">Cerrado</span>
-                </td>
-                <td>
-                  <a class="btn btn-success" href="">
-                    <i class="fas fa-eye"></i>
-                  </a>
-                </td>
-              </tr>
-              <tr>
-                <td>01/02/2020</td>
-                <td>
-                  <span class="badge badge-secondary">Cerrado</span>
-                </td>
-                <td>
-                  <a class="btn btn-success" href="">
-                    <i class="fas fa-eye"></i>
-                  </a>
-                </td>
-              </tr>
-              <tr>
-                <td>01/02/2020</td>
-                <td>
-                  <span class="badge badge-secondary">Cerrado</span>
-                </td>
-                <td>
-                  <a class="btn btn-success" href="">
-                    <i class="fas fa-eye"></i>
-                  </a>
-                </td>
-              </tr>
+              @endforeach
             </tbody>
           </table>
         </div>
