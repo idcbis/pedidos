@@ -31,7 +31,7 @@
                   <span class="badge badge-danger">{!! $order->state !!}</span>
                 </td>
                 <td>
-                  <a class="btn btn-success" href="">
+                  <a class="btn btn-success" href="{!! route('userOrderDetail', $order->id) !!}">
                     <i class="fas fa-eye"></i>
                   </a>
                 </td>

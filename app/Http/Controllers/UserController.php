@@ -69,4 +69,15 @@ class UserController extends Controller
 
         return view('users.orderHistory', compact('orders'));
     }
+
+    public function orderDetail($id) {
+        $order = \Auth::user()->orders()->where('id', $id)->first();
+        if(!empty($order)) {
+            $products = json_decode($order->order);
+            /* dd($test); */
+            $state = $order->state;
+            return view('users.orderDetail', compact('products', 'state'));
+        }
+        dd('error');
+    }
 }

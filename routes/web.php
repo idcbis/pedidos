@@ -16,6 +16,7 @@ Route::prefix('user')->group(function () {
   Route::get('stock', 'UserController@stock')->name('userStock');
   Route::post('post-stock', 'UserController@postStock')->name('postUserStock');
   Route::get('order-history', 'UserController@orderHistory')->name('userOrderHistory');
+  Route::get('order-detail/{id}', 'UserController@orderDetail')->name('userOrderDetail');
 });
 
 /* Shipping Routes */
