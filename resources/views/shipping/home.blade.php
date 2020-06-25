@@ -24,17 +24,19 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>09/02/2020</td>
-                <td>
-                  <span class="badge badge-danger">En proceso</span>
-                </td>
-                <td>
-                  <a class="btn btn-success" href="">
-                    <i class="fas fa-eye"></i>
-                  </a>
-                </td>
-              </tr>
+              @foreach($orders as $order)
+                <tr>
+                  <td>{!! $order->created_at !!}</td>
+                  <td>
+                    <span class="badge badge-danger">En proceso</span>
+                  </td>
+                  <td>
+                    <a class="btn btn-success" href="">
+                      <i class="fas fa-eye"></i>
+                    </a>
+                  </td>
+                </tr>
+              @endforeach
               <tr>
                 <td>07/02/2020</td>
                 <td>

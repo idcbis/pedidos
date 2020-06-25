@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Product;
+use App\Order;
 
 class ShippingController extends Controller
 {
@@ -14,7 +15,8 @@ class ShippingController extends Controller
     }
 
     public function dashboard () {
-        return view('shipping.home');
+        $orders = Order::OrderBy('id', 'DESC')->get();
+        return view('shipping.home', compact('orders'));
     }
 }
 
